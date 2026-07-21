@@ -70,7 +70,7 @@ export default function RegistrationForm({
         confirmPassword: 'Password not matched'
       });
       setGlobalError(
-        'Failed to register. Error: Password length is at least 6, contains at least one digit and contains at least one lower case and one upper case alphabet - at LogicLayer.PortalSubsystem.PortalUserRegistration.Register(UserInfo user, SAFRAMemberService.SOL.RegisterUserRequest request)'
+        'Failed to register. Error: Password length is at least 8, contains at least one digit and contains at least one lower case and one upper case alphabet - at LogicLayer.PortalSubsystem.PortalUserRegistration.Register(UserInfo user, SAFRAMemberService.SOL.RegisterUserRequest request)'
       );
     } else if (currentView === 'REGISTER_SYS_ERROR') {
       // Setup system registration error scenario values (Mockup 1)
@@ -160,7 +160,7 @@ export default function RegistrationForm({
         errors.password = 'Minimum 6 characters';
         setFormErrors(errors);
         setGlobalError(
-          'Failed to register. Error: Password length is at least 6, contains at least one digit and contains at least one lower case and one upper case alphabet - at LogicLayer.PortalSubsystem.PortalUserRegistration.Register(UserInfo user, SAFRAMemberService.SOL.RegisterUserRequest request)'
+          'Failed to register. Error: Password length is at least 8, contains at least one digit and contains at least one lower case and one upper case alphabet - at LogicLayer.PortalSubsystem.PortalUserRegistration.Register(UserInfo user, SAFRAMemberService.SOL.RegisterUserRequest request)'
         );
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
