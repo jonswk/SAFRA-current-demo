@@ -66,11 +66,11 @@ export default function RegistrationForm({
       setCaptchaInput('4R8H7K');
       
       setFormErrors({
-        password: 'Minimum 8 characters',
+        password: 'Minimum 6 characters',
         confirmPassword: 'Password not matched'
       });
       setGlobalError(
-        'Failed to register. Error: Password length is at least 8, contains at least one digit and contains at least one lower case and one upper case alphabet - at LogicLayer.PortalSubsystem.PortalUserRegistration.Register(UserInfo user, SAFRAMemberService.SOL.RegisterUserRequest request)'
+        'Failed to register. Error: Password length is at least 6, contains at least one digit and contains at least one lower case and one upper case alphabet - at LogicLayer.PortalSubsystem.PortalUserRegistration.Register(UserInfo user, SAFRAMemberService.SOL.RegisterUserRequest request)'
       );
     } else if (currentView === 'REGISTER_SYS_ERROR') {
       // Setup system registration error scenario values (Mockup 1)
@@ -154,13 +154,13 @@ export default function RegistrationForm({
       const hasDigit = /\d/.test(password);
       const hasLower = /[a-z]/.test(password);
       const hasUpper = /[A-Z]/.test(password);
-      const isLengthValid = password.length >= 8;
+      const isLengthValid = password.length >= 6;
 
       if (!isLengthValid || !hasDigit || !hasLower || !hasUpper) {
-        errors.password = 'Minimum 8 characters';
+        errors.password = 'Minimum 6 characters';
         setFormErrors(errors);
         setGlobalError(
-          'Failed to register. Error: Password length is at least 8, contains at least one digit and contains at least one lower case and one upper case alphabet - at LogicLayer.PortalSubsystem.PortalUserRegistration.Register(UserInfo user, SAFRAMemberService.SOL.RegisterUserRequest request)'
+          'Failed to register. Error: Password length is at least 6, contains at least one digit and contains at least one lower case and one upper case alphabet - at LogicLayer.PortalSubsystem.PortalUserRegistration.Register(UserInfo user, SAFRAMemberService.SOL.RegisterUserRequest request)'
         );
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
