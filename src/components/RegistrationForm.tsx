@@ -150,6 +150,15 @@ export default function RegistrationForm({
         return;
       }
 
+      // Check if membership ID is empty/not entered
+      if (!memberId || !memberId.trim()) {
+        setGlobalError(
+          'Failed to register. Error: Unable to create online account. For further assistance, please email to membership@safra.sg.'
+        );
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
       // 2. Complex Password validation
       const hasDigit = /\d/.test(password);
       const hasLower = /[a-z]/.test(password);
